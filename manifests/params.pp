@@ -10,7 +10,7 @@
 #
 class ipset::params {
 
-  $package = $::operatingsystem ? {
+  $package = $facts['os']['family'] ? {
       'Gentoo' => 'net-firewall/ipset',
        default => 'ipset',
   }
